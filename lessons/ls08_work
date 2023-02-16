@@ -1,0 +1,5 @@
+"""Fun games"""
+
+age: int = 21
+msg: str = "You are {age}!"
+print(msg)
