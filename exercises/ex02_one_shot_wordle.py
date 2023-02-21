@@ -22,27 +22,31 @@ while playing:
         playing = False
 
 while guess_idx < len(secret_word):
-    if(secret_word[guess_idx]) != (guess[guess_idx]):
+    if(secret_word[guess_idx]) == (guess[guess_idx]):
+        result_emoji += GREEN_BOX
+    else:
         character_elsewhere: bool = False
         character_elsewhere_idx: int = 0
-        while character_elsewhere == False:
-            if(guess[character_elsewhere_idx]) in secret_word:
-                result_emoji += YELLOW_BOX
-                guess_idx += 1
-                character_elsewhere_idx += 1
+        while character_elsewhere == False and character_elsewhere_idx< len(secret_word):
+            if (secret_word[character_elsewhere_idx]) == (guess[guess_idx]): 
                 character_elsewhere = True
             else:
+                character_elsewhere_idx += 1
+        if character_elsewhere == True:
+                result_emoji += YELLOW_BOX
+        else:
                 result_emoji += WHITE_BOX
-    else:
-        guess_idx += 1
-        result_emoji += GREEN_BOX
+
+    guess_idx += 1
+        
 
 print(result_emoji)
-if guess != secret_word:
-    print(f"Not quite. Play again soon!")
-else:
-    guess == secret_word
+if guess == secret_word:
     print(f"Woo! You got it!")
+else:
+    guess != secret_word
+    print(f"Not quite. Play again soon!")
+
 
 
 
