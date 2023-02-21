@@ -1,14 +1,14 @@
-"""EX02 - Wordle """
+"""EX02 - Wordle."""
 
-__author__ = 730622763
+__author__ = "730622763"
 
 secret_word: str = "python"
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
 
-character_idx: int = int(len(secret_word))
-guess: str = input(f"What is your {character_idx}-letter guess? ")
+Character_idx: int = int(len(secret_word))
+guess: str = input(f"What is your {Character_idx}-letter guess? ")
 playing: bool = True
 guess_idx: int = 0
 result_emoji: str = ""
@@ -16,8 +16,7 @@ result_emoji: str = ""
 while playing:
     if(len(guess)) != len(secret_word):
        #when secret word and guess are not the same length
-       print(f"That was not {character_idx} letters! Try again: {guess} ")
-       guess: str = input(f"What is your {character_idx}-letter guess? ")
+       print(f"That was not {Character_idx} letters! Try again: {guess} ")
     else:
         playing = False
 
@@ -46,7 +45,3 @@ if guess == secret_word:
 else:
     guess != secret_word
     print(f"Not quite. Play again soon!")
-
-
-
-
