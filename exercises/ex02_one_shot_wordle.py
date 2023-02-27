@@ -35,7 +35,7 @@ while guess_idx < len(secret_word):
                 result_emoji += YELLOW_BOX
         else:
                 result_emoji += WHITE_BOX
-
+                
     guess_idx += 1
         
 
