@@ -36,14 +36,14 @@ def emojified(guess: str, secret_word: str) -> str:
 
 def input_guess(expected_length: int) -> str:
     """Prompts user for guess for matching expected length"""
-    asked_guess: str = input(f"Enter a {expected_length} word: ")
+    asked_guess: str = input(f"Enter a {expected_length} character word: ")
     playing: bool = True
     while playing:
         if len(asked_guess) != expected_length:
             asked_guess = input(f"That wasn't {expected_length} chars! Try again: ")
-            return asked_guess
         else:
-            return asked_guess
+            playing = False
+    return asked_guess
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
