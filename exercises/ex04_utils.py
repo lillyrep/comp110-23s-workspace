@@ -3,17 +3,18 @@
 __author__ = "730622763"
 
 
-def all(int_list: list[int], int) -> bool:
+def all(int_list: list[int], int: int) -> bool:
     """Determines if int matches all ints in list."""
     int_list_idx: int = 0
     if len(int_list) == 0:
         return False
     while int_list_idx < len(int_list):
         if (int_list[int_list_idx]) == int:
-            int_list_idx +=1
+            int_list_idx += 1
         else:
             return False
     return True
+
 
 def max(max_integers_list: list[int]) -> int:
     """Determines the max number in the list.""" 
@@ -27,6 +28,7 @@ def max(max_integers_list: list[int]) -> int:
                 max_integer = current_int
         max_integers_list_idx += 1
     return max_integer
+
 
 def is_equal(first_list: list[int], second_list: list[int]) -> bool:
     """Determines if first list integers match second list integers at same index."""
