@@ -5,12 +5,12 @@ __author__ = "730622763"
 
 def all(int_list: list[int], int: int) -> bool:
     """Determines if int matches all ints in list."""
-    int_list_idx: int = 0
     if len(int_list) == 0:
         return False
+    int_list_idx: int = 0
     while int_list_idx < len(int_list):
         if (int_list[int_list_idx]) == int:
-            int_list_idx += 1
+            int_list_idx = int_list_idx + 1
         else:
             return False
     return True
@@ -24,9 +24,9 @@ def max(max_integers_list: list[int]) -> int:
     max_integer: int = int(max_integers_list[0])
     while max_integers_list_idx < len(max_integers_list):
         current_int: int = int(max_integers_list[max_integers_list_idx])
-        if (current_int > max_integer):
-                max_integer = current_int
-        max_integers_list_idx += 1
+    if (current_int > max_integer):
+            max_integer = current_int
+    max_integers_list_idx += 1
     return max_integer
 
 
