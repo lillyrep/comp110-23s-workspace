@@ -6,7 +6,7 @@ __author__ = "730622763"
 def all(int_list: list[int], int) -> bool:
     """Determines if int matches all ints in list."""
     int_list_idx: int = 0
-    while int_list_idx <= len(int_list):
+    while int_list_idx < len(int_list):
         if (int_list[int_list_idx]) == int:
             int_list_idx +=1
         else:
