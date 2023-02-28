@@ -3,11 +3,13 @@
 __author__ = "730622763"
 
 def all(int_list: list[int], int) -> bool:
-    while len(str(int)) < len(int_list):
-        if int_list == int:
-            return True
+    int_list_idx: int = 0
+    while int_list_idx < len(int_list):
+        if (int_list[int_list_idx]) == int:
+            int_list_idx +=1
         else:
             return False
+    return True
 
 def max(max_integers_list: list[int]) -> int:
     """Determines the max number in the list.""" 
@@ -25,10 +27,9 @@ def max(max_integers_list: list[int]) -> int:
 def is_equal(first_list: list[int], second_list: list[int]) -> bool:
     """Determines if first list integers match second list integers at same index."""
     list_idx: int = 0
-    while list_idx > len(first_list):
+    while list_idx < len(first_list):
         if first_list[list_idx] == second_list[list_idx]:
-            return True
+            list_idx += 1
         else:
             return False
-    list_idx += 1
-        
+    return True
