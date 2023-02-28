@@ -6,6 +6,8 @@ __author__ = "730622763"
 def all(int_list: list[int], int) -> bool:
     """Determines if int matches all ints in list."""
     int_list_idx: int = 0
+    if len(int_list) == 0:
+        return False
     while int_list_idx < len(int_list):
         if (int_list[int_list_idx]) == int:
             int_list_idx +=1
@@ -30,7 +32,9 @@ def is_equal(first_list: list[int], second_list: list[int]) -> bool:
     """Determines if first list integers match second list integers at same index."""
     first_list_idx: int = 0
     second_list_idx: int = 0
-    while first_list[first_list_idx] == second_list[second_list_idx] or first_list[first_list_idx] != second_list[second_list_idx]:
+    if len(first_list) != len(second_list):
+        return False
+    while first_list_idx < len(first_list):
         if first_list[first_list_idx] == second_list[second_list_idx]:
             first_list_idx += 1
             second_list_idx += 1
