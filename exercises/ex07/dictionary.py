@@ -2,6 +2,7 @@
 
 __author__ = "730622763"
 
+
 def invert(first_dict: dict[str, str]) -> dict[str, str]:
     """Inverts key and values."""
     result: dict[str, str] = {}
@@ -10,7 +11,8 @@ def invert(first_dict: dict[str, str]) -> dict[str, str]:
         result[val] = key
     return result
 
-def favorite_colors(color_list: dict[str, str]) -> str:
+
+def favorite_color(color_list: dict[str, str]) -> str:
     """Returns color listed the most."""
     color_count: int = 0
     for color in color_list:

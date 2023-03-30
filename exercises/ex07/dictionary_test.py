@@ -1,7 +1,12 @@
 """Unit Tests for EX 07."""
 
 __author__ = "730622763"
-from exercises.ex07.dictionary import invert, favorite_colors, count
+
+from exercises.ex07.dictionary import invert, favorite_color, count, pytest
+
+with pytest.raises(KeyError):
+        my_dictionary = {'kris': 'jordan', 'michael': 'jordan'}
+        invert(my_dictionary) 
 
 def test_empty() -> None:
     """considered an edge case since not likely to give empty dict."""
@@ -19,17 +24,17 @@ def test_value_same_as_key() -> None:
 
 def test_empty() -> None:
     """considered an edge case since not likely to give empty dict."""
-    assert favorite_colors({}) == ""
+    assert favorite_color({}) == ""
 
 def test_many() -> None:
     """considered a use case since multiple values in dict."""
     test_dict: dict[str, str] = {'a': 'green', 'b' : 'green', 'c': 'blue'}
-    assert favorite_colors(test_dict) == "green"
+    assert favorite_color(test_dict) == "green"
 
 def test_two_popular_colors() -> None:
     """likely to have two popular options."""
     test_dict: dict[str, str] = {'a': 'green', 'b' : 'green', 'c': 'blue', 'v': 'orange', 'r': 'blue'}
-    assert favorite_colors(test_dict) == "green"
+    assert favorite_color(test_dict) == "green"
 
 def test_empty() -> None:
     """considered an edge case since not likely to give empty dict."""
