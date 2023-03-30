@@ -9,6 +9,8 @@ def invert(first_dict: dict[str, str]) -> dict[str, str]:
     for key in first_dict:
         val = first_dict[key]
         result[val] = key
+    if key == key:
+        raise ValueError("Key values must be unique.")
     return result
 
 
