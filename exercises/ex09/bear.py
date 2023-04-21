@@ -1,9 +1,10 @@
 """File to define Bear class."""
 
+
 class Bear:
     """My class Bear."""
 
-    #attributes
+    # attributes
     age: int
     hunger_score: int
     

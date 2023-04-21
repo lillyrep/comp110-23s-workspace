@@ -8,13 +8,14 @@ from exercises.ex09.bear import Bear
 class River:
     """My class River."""
 
-    #attributes
-    day: int #what day of river lifecycle being modeled
-    bears: list[Bear] #stores bear population
-    fish: list [Fish] #stores fish population
+
+    # attributes
+    day: int  # what day of river lifecycle being modeled
+    bears: list[Bear]  # stores bear population
+    fish: list[Fish]  # stores fish population
     
-    def __init__(self, num_fish: int, num_bears:int):
-        """New River with num_fish Fish and num_bears Bears"""
+    def __init__(self, num_fish: int, num_bears:int): 
+        """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
         self.bears: list[Bear] = []
@@ -70,7 +71,7 @@ class River:
         return None
             
     def one_river_day(self):
-        """Simulate one day of life in the river"""
+        """Simulate one day of life in the river."""
         # Increase day by 1
         self.day += 1
         # Simulate one day for all Bears
