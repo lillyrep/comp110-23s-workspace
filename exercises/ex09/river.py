@@ -5,16 +5,16 @@ __author__ = "730622763"
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
+
 class River:
     """My class River."""
-
 
     # attributes
     day: int  # what day of river lifecycle being modeled
     bears: list[Bear]  # stores bear population
     fish: list[Fish]  # stores fish population
     
-    def __init__(self, num_fish: int, num_bears:int): 
+    def __init__(self, num_fish: int, num_bears: int): 
         """New River with num_fish Fish and num_bears Bears."""
         self.day: int = 0
         self.fish: list[Fish] = []
@@ -27,15 +27,25 @@ class River:
 
     def check_ages(self):
         """Checking ages."""
+        new_ages_bears: list[Bear] = []
+        new_ages_fish: list[Fish] = []
+        for bears in self.bears:
+            if Bear.age <= 5:
+                new_ages_bears.append(bears)
+        self.bears: list[Bear] = new_ages_bears
+        for fish in self.fish:
+            if Fish.age <= 3:
+                new_ages_fish.append(fish)
+        self.fish: list[Fish] = new_ages_fish
         return None
 
     def bears_eating(self):
         """Bears eating removes fish."""
         if len(self.fish) >= 5:
-            Bear.eat(3)
+            Bear.eat(self, 3)
             self.remove_fish(3)
         if len(self.fish) < 5:
-            Bear.eat(0)
+            Bear.eat(self, 0)
         return None
     
     def check_hunger(self):
@@ -110,7 +120,7 @@ class River:
 
     def remove_fish(self, amount: int):
         """Removing fish from river."""
-        self.fish.pop(amount)
+        self.fish.pop(0)
         return None
 
     def one_river_week(self):
