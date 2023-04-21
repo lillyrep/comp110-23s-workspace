@@ -54,7 +54,7 @@ class River:
         for bear in self.bears:
             if Bear.hunger_score > 0:
                 new_bear_list.append(bear)
-        self.bears: list[Bear] = new_bear_list
+        self.bears = new_bear_list
         return None
         
     def repopulate_fish(self):
@@ -65,9 +65,11 @@ class River:
     
     def repopulate_bears(self):
         """Adding bears."""
-        n: int = (self.bears // 2)
-        while len(self.bears) >= 2:
-            self.bears.append(Bear) * 2(n)
+        n: int = (len(self.bears) // 2)
+        all_bears: list[Bear] = self.bears
+        for bear in n:
+            all_bears.append(bear)
+        self.bears = all_bears
         return None
     
     def view_river(self):
