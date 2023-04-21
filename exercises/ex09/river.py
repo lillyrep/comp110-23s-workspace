@@ -30,21 +30,20 @@ class River:
 
     def bears_eating(self):
         """Bears eating removes fish."""
-        if len(self.fish) > 5:
-            self.eat(3)
+        if len(self.fish) >= 5:
+            Bear.eat(3)
             self.remove_fish(3)
         if len(self.fish) < 5:
-            self.eat(0)
+            Bear.eat(0)
         return None
     
     def check_hunger(self):
         """Checking hunger score."""
         new_bear_list: list[Bear] = []
         for bear in self.bears:
-            if self.hunger_score(Bear) > 0:
+            if Bear.hunger_score > 0:
                 new_bear_list.append(bear)
         self.bears: list[Bear] = new_bear_list
-
         return None
         
     def repopulate_fish(self):
@@ -55,8 +54,9 @@ class River:
     
     def repopulate_bears(self):
         """Adding bears."""
+        n: int = (self.bears // 2)
         while len(self.bears) >= 2:
-            self.bears += len(self.bears) // 2
+            self.bears.append(Bear) * 2(n)
         return None
     
     def view_river(self):
@@ -114,13 +114,6 @@ class River:
 
     def one_river_week(self):
         """One week or 7 days go by."""
-        self.one_river_day()
-        self.one_river_day()
-        self.one_river_day()
-        self.one_river_day()
-        self.one_river_day()
-        self.one_river_day()
-        self.one_river_day()
-        self.day = 7
+        self.one_river_day() * 7
         return None
             
