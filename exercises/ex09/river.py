@@ -1,9 +1,12 @@
-"""File to define River class"""
+"""File to define River class."""
+
+__author__ = "730622763"
 
 from exercises.ex09.fish import Fish
 from exercises.ex09.bear import Bear
 
 class River:
+    """My class River."""
 
     #attributes
     day: int #what day of river lifecycle being modeled
@@ -22,34 +25,42 @@ class River:
             self.bears.append(Bear())
 
     def check_ages(self):
+        """Checking ages."""
         return None
 
     def bears_eating(self):
-        while (len(self.bears)) / (len(self.fish)) >= 3:
+        """Bears eating removes fish."""
+        if len(self.fish) > 5:
             self.eat(3)
             self.remove_fish(3)
+        if len(self.fish) < 5:
+            self.eat(0)
         return None
     
     def check_hunger(self):
+        """Checking hunger score."""
         new_bear_list: list[Bear] = []
         for bear in self.bears:
-            if self.bears() > 0:
+            if self.hunger_score(Bear) > 0:
                 new_bear_list.append(bear)
         self.bears: list[Bear] = new_bear_list
 
         return None
         
     def repopulate_fish(self):
+        """Adding fish."""
         while len(self.fish) >= 2:
             self.fish += (len(self.fish) // 2) * 4
         return None
     
     def repopulate_bears(self):
+        """Adding bears."""
         while len(self.bears) >= 2:
             self.bears += len(self.bears) // 2
         return None
     
     def view_river(self):
+        """Viewing the river population."""
         x = self.day
         y: int = len(self.fish)
         z: int = len(self.bears)
@@ -77,10 +88,15 @@ class River:
         new_bears: list[Bear] = []
         new_fish: list[Fish] = []
         for bears in self.bears:
+            if bear.age > 5:
+                new_bears.pop(bears)
             if bear.age <= 5:
                 new_bears.append(bears)
             self.bears: list[Bear] = new_bears
+
         for fish in self.fish:
+            if fish.age > 3:
+                new_fish.pop(fish)
             if fish.age <= 3:
                 new_fish.append(fish)
             self.fish: list[Fish] = new_fish
@@ -92,10 +108,12 @@ class River:
         self.view_river()
 
     def remove_fish(self, amount: int):
+        """Removing fish from river."""
         self.fish.pop(amount)
         return None
 
     def one_river_week(self):
+        """One week or 7 days go by."""
         self.one_river_day()
         self.one_river_day()
         self.one_river_day()
@@ -103,5 +121,6 @@ class River:
         self.one_river_day()
         self.one_river_day()
         self.one_river_day()
+        self.day = 7
         return None
             

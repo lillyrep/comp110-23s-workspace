@@ -1,6 +1,7 @@
-"""File to define Fish class"""
+"""File to define Fish class."""
 
 class Fish:
+    """My class Fish."""
 
     #attributes
     age: int
